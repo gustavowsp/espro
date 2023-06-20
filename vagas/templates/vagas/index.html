@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextTrampos</title>
+
+
+    <!-- Script para icons do FontAwesome -->
+    <script src="https://kit.fontawesome.com/5b85f063c4.js" crossorigin="anonymous"></script>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="{%static 'vagas/css.css' %}">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{%static 'vagas/vendor/css/bootstrap.min.css' %} ">
+    
+    <!--Normalize Css-->
+    <link rel="stylesheet" href="{%static 'vagas/normalize.css' %}">
+
+    <link rel="icon" href="{%static 'vagas/img/icon.ico' %}">
+
+</head>
+<body class="h-100">
+
+
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+
+        <!-- Logo Da Barra De Navegação -->
+        <a href="https://github.com/gustavowsp/padrao" class="navbar-brand font-weight-bold">Repositório</a>
+
+
+        
+        <!-- Menu da Navegação Responsiva-->
+        <button class="navbar-toggler"
+         data-toggle="collapse" data-target="#Menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navegação -->
+        <div class="collapse navbar-collapse" id="Menu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"> 
+                    <a class="nav-link" href="https://github.com/gustavowsp">GitHub</a> 
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="https://www.linkedin.com/in/gustavo-jos%C3%A9-campos-319084251/">Linkedin</a> 
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    
+    
+
+        <div class="container-fluid h-100">
+
+            <div class="row h-100">
+                
+                <!-- vagas de emprego -->
+                <section class="col-10 order-2 border h-100 ">
+                    <article>
+
+                        <header id="header">
+                            <h1>Vagas de emprego</h1>
+                            <ul>
+                                <li>Vagas</li>
+                                <li>Vagas aplicadas</li>
+                                <li>Analisando vagas</li>
+                            </ul>
+                            <div class="clear"></div>
+                        </header>
+
+                        <div class="row" id="vagas">
+
+                            {% for vaga in vagas.values  %}
+                            <section class="col-3 vagabox">
+
+                                <div class="vaga">
+
+                                    <div class="empresa">
+                                        <div class="foto-rec">
+                                            <img src="{{vaga.foto.url}}" alt="">
+                                        </div>
+                                        <h4>{{vaga.nome_vaga}}</h4>
+                                    </div>
+
+                                    <div class="info-vaga">
+
+                                        <div class="info">
+                                            <h6>Salário</h6>
+                                            <h6>R${{vaga.salario}},00</h6>
+                                        </div>
+
+                                        <div class="info">
+                                            <h6>Local</h6>
+                                            <h6>{{vaga.local}}</h6>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="text-center">
+                                        <a href class="btn btn-sm btn-outline-primary font-weight-bold">Se candidatar</a>
+                                    </div>
+                                </div>
+
+                            </section>
+                            {% endfor %}
+                            
+                        </section>
+
+                <!-- menu lateral -->
+                <aside class="col-2 order-1 border h-100 bg-white" id="menu">
+
+                    <section class="nav">
+                        <h5>Ferramentas de vaga</h5>
+                        <ul>
+                            <li>Currículo</li>
+                            <li>Projetos</li>
+                            <li>Meu vídeo</li>
+                        </ul>
+                    </section>
+
+                    <section class="nav">
+                        <h5>Portais de emprego</h5>
+                        <ul>
+                            <li>Linkedin</li>
+                            <li>Catcho</li>
+                            <li>InfoJobs</li>
+                        </ul>
+                    </section>
+
+                    <section class="nav">
+                        <h5>Métricas</h5>
+                        <ul>
+                            <li>Vizualizações currículo</li>
+                            <li>Contao</li>
+                            <li>Chamagem intrevista</li>
+                        </ul>
+                    </section>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="{%static 'vagas/vendor/js/bootstrap.min.js' %}"></script>
+    
+
+</body>
+</html>
