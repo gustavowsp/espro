@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f%x1t#@8pbf6h9sq-#3!w530-@)$vo=ju3&q*0#va47wpem5c%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app']
 
@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = BASE_DIR / 'templates/staticfiles_build'
 STATIC_ROOT = BASE_DIR / 'templates/staticfiles_build'
 STORAGES = {
     # ...
