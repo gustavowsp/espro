@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-f%x1t#@8pbf6h9sq-#3!w530-@)$vo=ju3&q*0#va47wpem5c%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -123,9 +124,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'templates/staticfiles_build'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage",
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 MEDIA_ROOT =  BASE_DIR / 'media'
